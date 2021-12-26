@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() =>runApp(MaterialApp(
-  debugShowCheckedModeBanner: false,
-  home: MyApp(),
-));
+void main() => runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    ));
+
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFA10505),
-
-
       appBar: AppBar(
         title: const Text("Papa"),
         centerTitle: true,
@@ -22,10 +22,9 @@ class MyApp extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-
             const Center(
               child: CircleAvatar(
-                backgroundImage: AssetImage("assets/image.jpg"),
+                backgroundImage: AssetImage('assets/pap.jpg'),
                 radius: 40,
               ),
             ),
@@ -51,23 +50,23 @@ class MyApp extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-          Row(
-            children: <Widget>[
-              Icon(
-                Icons.email,
-                color: Colors.green[100],
-              ),
-              const SizedBox(width: 30),
-              const Text(
-                "girmaytadese@gmail.com",
-                style: TextStyle(
-                  letterSpacing: 2,
-                  color: Colors.blueGrey,
-                  fontSize: 20,
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.green[100],
                 ),
-              ),
-            ],
-          ),
+                const SizedBox(width: 30),
+                const Text(
+                  "girmaytadese@gmail.com",
+                  style: TextStyle(
+                    letterSpacing: 2,
+                    color: Colors.blueGrey,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
