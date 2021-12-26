@@ -66,8 +66,7 @@ class _ListExampleState extends State<ListExample> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(14.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children:quotes.map((quote) => quoteStyle(
               quote,
               delete:(){
