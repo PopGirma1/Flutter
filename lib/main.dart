@@ -5,8 +5,15 @@ void main() => runApp(const MaterialApp(
       home: MyApp(),
     ));
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int counter=1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +23,15 @@ class MyApp extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: const Color(0xFF8E0B34),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            counter=counter+1;
+          });
+        },
+        child: const Icon(Icons.add),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -50,6 +66,15 @@ class MyApp extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
+            Text(
+              "$counter",
+              style: TextStyle(
+                letterSpacing: 2,
+                color: Colors.amberAccent[200],
+                fontSize: 28,
+              ),
+            ),
+            const SizedBox(height: 10.0),
             Row(
               children: <Widget>[
                 Icon(
@@ -73,3 +98,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
